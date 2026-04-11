@@ -1,0 +1,36 @@
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.contact-intro p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.9;
+  margin-bottom: 20px;
+}
+
+.contact-cta { margin-top: 16px; }
+
+.contact-cards { display: flex; flex-direction: column; gap: 16px; }
+
+.contact-item { padding: 20px 24px; }
+
+.contact-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.contact-value { font-size: 0.9rem; color: var(--text-primary); font-weight: 500; }
+.contact-value.link { text-decoration: none; color: var(--accent); transition: opacity 0.2s; }
+.contact-value.link:hover { opacity: 0.75; }
+
+@media (max-width: 768px) {
+  .contact-layout { grid-template-columns: 1fr; gap: 48px; }
+}

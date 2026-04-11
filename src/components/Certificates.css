@@ -1,0 +1,21 @@
+.certs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.cert-card { display: flex; flex-direction: column; gap: 12px; }
+.cert-icon { font-size: 2rem; }
+.cert-type { align-self: flex-start; }
+
+.cert-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.cert-issuer { font-size: 0.82rem; color: var(--text-muted); margin-top: auto; }
+
+@media (max-width: 768px) { .certs-grid { grid-template-columns: 1fr; } }
