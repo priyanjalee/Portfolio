@@ -13,7 +13,7 @@ const educationItems = [
   {
     id: 2,
     degree: 'G.C.E Advanced Level – Physical Science Stream',
-    institution: 'Secondary School, Sri Lanka',
+    institution: "St.Joseph's Balika Vidyalaya', Kegalle",
     period: '2020',
     grade: 'ICT – B | Combined Maths – C | Physics – S',
     description: 'Completed Advanced Level examinations in the Physical Science stream with a focus on ICT, Mathematics, and Physics.',
