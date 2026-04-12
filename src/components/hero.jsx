@@ -1,6 +1,5 @@
 import './hero.css';
-import profileImg from '../assets/profile.png'; // change to .png if needed
-
+import profileImg from '../assets/profile.png'; 
 function Hero() {
   return (
     <section id="home" className="hero">
@@ -28,14 +27,15 @@ function Hero() {
           </p>
 
           <p className="hero-bio fade-up">
-            Results-driven Computer Science undergraduate seeking internship opportunities
-            in Software Engineering, Data Science, or AI/ML. Experienced in building
+             Computer Science undergraduate seeking internship opportunities
+            in Software Engineering, Project Management, Data Science, or AI/ML. Experienced in building
             full-stack mobile applications, machine learning pipelines, and managing
             agile software projects end-to-end. Passionate about creating scalable,
             data-driven solutions that deliver real-world impact.
           </p>
 
           <div className="hero-actions fade-up">
+            
             <a href="#projects" className="btn btn-primary">
               View Projects
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
@@ -44,6 +44,14 @@ function Hero() {
             </a>
             <a href="#contact" className="btn btn-outline">Get In Touch</a>
           </div>
+          <a href="public/W.K.C.P.Bandara_all( Resume).pdf" download="Priyanjalee_Bandara_CV.pdf" className="btn-cv">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" width="16" height="16">
+    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+    <polyline points="7 10 12 15 17 10"/>
+    <line x1="12" y1="15" x2="12" y2="3"/>
+  </svg>
+  Download CV
+</a>
 
           <div className="hero-socials fade-up">
             <a href="https://www.linkedin.com/in/priyanjalee-bandara-878536269/" target="_blank" rel="noopener noreferrer" className="social-link">

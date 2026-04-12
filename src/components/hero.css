@@ -7,65 +7,64 @@
   padding: 130px 0 90px;
 }
 
-/* ── Deep violet nebula background ── */
 .hero-bg {
   position: absolute;
   inset: 0;
   z-index: 0;
   background: var(--bg-dark);
   background-image:
-    radial-gradient(ellipse 60% 60% at 80% 15%, rgba(109,40,217,0.18) 0%, transparent 65%),
-    radial-gradient(ellipse 50% 45% at 10% 80%, rgba(139,92,246,0.1) 0%, transparent 60%),
-    radial-gradient(ellipse 40% 35% at 60% 90%, rgba(167,139,250,0.07) 0%, transparent 55%),
-    radial-gradient(ellipse 30% 30% at 95% 55%, rgba(196,181,253,0.05) 0%, transparent 50%);
+    radial-gradient(ellipse 60% 55% at 75% 15%, rgba(59,130,246,0.13) 0%, transparent 65%),
+    radial-gradient(ellipse 45% 40% at 10% 80%, rgba(34,197,94,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 35% 30% at 90% 80%, rgba(34,197,94,0.06) 0%, transparent 55%),
+    radial-gradient(ellipse 40% 35% at 30% 20%, rgba(59,130,246,0.06) 0%, transparent 55%);
   pointer-events: none;
 }
 
-/* ── Two-column layout ── */
 .hero-content {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: 1fr 320px;
+  grid-template-columns: 1fr 360px;
   gap: 80px;
   align-items: center;
 }
 
-.hero-left { display: flex; flex-direction: column; }
+.hero-left {
+  display: flex;
+  flex-direction: column;
+}
 
-/* ── Available badge ── */
 .hero-badge {
   display: inline-flex;
   align-items: center;
   gap: 10px;
   padding: 7px 18px;
-  background: rgba(139, 92, 246, 0.08);
-  border: 1px solid rgba(139, 92, 246, 0.25);
+  background: rgba(59, 130, 246, 0.08);
+  border: 1px solid rgba(59, 130, 246, 0.22);
   border-radius: 100px;
   font-size: 0.78rem;
   font-weight: 500;
-  color: var(--accent-2);
+  color: #60A5FA;
   margin-bottom: 30px;
   align-self: flex-start;
   letter-spacing: 0.04em;
   animation: fadeUp 0.7s ease forwards;
   animation-delay: 0.1s;
   opacity: 0;
-  backdrop-filter: blur(8px);
 }
 
 .badge-dot {
   width: 7px;
   height: 7px;
-  background: #4ade80;
+  background: #22C55E;
   border-radius: 50%;
-  box-shadow: 0 0 8px rgba(74, 222, 128, 0.8);
+  box-shadow: 0 0 8px rgba(34, 197, 94, 0.9);
   animation: pulse 2.5s infinite;
 }
 
 @keyframes pulse {
   0%, 100% { opacity: 1; transform: scale(1); }
-  50%       { opacity: 0.5; transform: scale(1.5); }
+  50%       { opacity: 0.4; transform: scale(1.5); }
 }
 
 @keyframes fadeUp {
@@ -73,7 +72,6 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ── Name ── */
 .hero-name {
   font-family: var(--font-display);
   font-size: clamp(3rem, 6.5vw, 5.8rem);
@@ -87,10 +85,9 @@
   opacity: 0;
 }
 
-/* Last name gets violet gradient */
 .hero-name span {
   display: block;
-  background: var(--grad-main);
+  background: linear-gradient(135deg, #3B82F6 0%, #22C55E 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -98,9 +95,8 @@
   margin-top: 6px;
 }
 
-/* ── Role ── */
 .hero-role {
-  font-size: 0.75rem;
+  font-size: 0.74rem;
   color: var(--text-muted);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -111,7 +107,6 @@
   opacity: 0;
 }
 
-/* ── Bio ── */
 .hero-bio {
   font-size: 1rem;
   color: var(--text-secondary);
@@ -123,15 +118,80 @@
   opacity: 0;
 }
 
-/* ── Buttons ── */
 .hero-actions {
   display: flex;
   gap: 14px;
   flex-wrap: wrap;
+  align-items: center;
   margin-bottom: 42px;
   animation: fadeUp 0.7s ease forwards;
   animation-delay: 0.5s;
   opacity: 0;
+}
+
+/* ── Download CV — Style B: Green Outline ── */
+.btn-cv {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: transparent;
+  color: #4ADE80;
+  border: 1.5px solid rgba(34, 197, 94, 0.4);
+  border-radius: 10px;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-cv::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(34, 197, 94, 0.08);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 8px;
+}
+
+.btn-cv:hover::before {
+  transform: scaleX(1);
+}
+
+.btn-cv:hover {
+  color: #86EFAC;
+  border-color: #22C55E;
+  transform: translateY(-2px);
+  box-shadow:
+    0 6px 20px rgba(34, 197, 94, 0.18),
+    0 0 0 1px rgba(34, 197, 94, 0.1);
+}
+
+.btn-cv:active {
+  transform: translateY(0px);
+  box-shadow: none;
+}
+
+.btn-cv .cv-icon {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+.btn-cv:hover .cv-icon {
+  animation: bounceDown 0.6s ease infinite alternate;
+}
+
+@keyframes bounceDown {
+  from { transform: translateY(0); }
+  to   { transform: translateY(3px); }
 }
 
 /* ── Socials ── */
@@ -155,11 +215,11 @@
   transition: color 0.3s;
 }
 
-.social-link:hover { color: var(--accent-2); }
+.social-link:hover { color: #60A5FA; }
 
-/* ══════════════════════════════
+/* ══════════════════
    PROFILE IMAGE
-   ══════════════════════════════ */
+   ══════════════════ */
 .hero-right {
   animation: fadeUp 0.7s ease forwards;
   animation-delay: 0.35s;
@@ -174,7 +234,6 @@
   height: 440px;
 }
 
-/* The photo — clean, no rings, no borders */
 .profile-photo {
   width: 100%;
   height: 100%;
@@ -184,53 +243,44 @@
   display: block;
   position: relative;
   z-index: 2;
-  filter: brightness(1.03) contrast(1.04) saturate(1.05);
+  filter: brightness(1.02) contrast(1.03) saturate(1.04);
 }
 
-/* Soft violet glow pool beneath photo */
 .profile-glow {
   position: absolute;
-  bottom: -25px;
+  bottom: -22px;
   left: 50%;
   transform: translateX(-50%);
-  width: 75%;
-  height: 70px;
-  background: var(--accent);
+  width: 70%;
+  height: 65px;
+  background: #3B82F6;
   border-radius: 50%;
   filter: blur(38px);
-  opacity: 0.22;
+  opacity: 0.18;
   z-index: 1;
-  animation: glowPulse 4s ease-in-out infinite;
+  animation: glowPulse 5s ease-in-out infinite;
 }
 
 @keyframes glowPulse {
-  0%, 100% { opacity: 0.18; width: 70%; }
-  50%       { opacity: 0.3;  width: 80%; }
+  0%, 100% { opacity: 0.14; width: 65%; }
+  50%       { opacity: 0.26; width: 76%; }
 }
 
-/* Thin left violet accent line */
 .profile-line {
   position: absolute;
-  left: -14px;
-  top: 18%;
-  bottom: 18%;
+  left: -12px;
+  top: 20%;
+  bottom: 20%;
   width: 2px;
   border-radius: 2px;
-  background: var(--grad-main);
+  background: linear-gradient(135deg, #3B82F6 0%, #22C55E 100%);
+  opacity: 0.7;
   z-index: 3;
 }
 
-
-
-@keyframes dotPulse {
-  0%, 100% { box-shadow: 0 0 10px rgba(139,92,246,0.7); transform: scale(1); }
-  50%       { box-shadow: 0 0 22px rgba(167,139,250,1);  transform: scale(1.2); }
-}
-
-/* Floating badge at bottom */
 .profile-badge {
   position: absolute;
-  bottom: -22px;
+  bottom: -20px;
   left: 50%;
   transform: translateX(-50%);
   display: inline-flex;
@@ -238,30 +288,28 @@
   gap: 8px;
   padding: 9px 20px;
   background: var(--bg-card);
-  border: 1px solid var(--border-strong);
+  border: 1px solid rgba(59, 130, 246, 0.25);
   border-radius: 100px;
-  font-size: 0.76rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  color: var(--accent-2);
+  color: #60A5FA;
   white-space: nowrap;
   z-index: 4;
   letter-spacing: 0.04em;
   box-shadow:
-    0 8px 30px rgba(0, 0, 0, 0.5),
-    0 0 20px rgba(139, 92, 246, 0.15);
-  backdrop-filter: blur(12px);
+    0 8px 24px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(59, 130, 246, 0.1);
 }
 
 .profile-badge-dot {
   width: 7px;
   height: 7px;
-  background: #4ade80;
+  background: #22C55E;
   border-radius: 50%;
-  box-shadow: 0 0 8px rgba(74, 222, 128, 0.9);
+  box-shadow: 0 0 8px rgba(34, 197, 94, 0.9);
   animation: pulse 2.5s infinite;
 }
 
-/* ── Scroll dot ── */
 .scroll-indicator {
   position: absolute;
   bottom: 36px;
@@ -273,7 +321,7 @@
 .scroll-dot {
   width: 5px;
   height: 5px;
-  background: var(--accent-2);
+  background: #60A5FA;
   border-radius: 50%;
   animation: scrollBounce 2s ease-in-out infinite;
 }
@@ -295,11 +343,18 @@
   .hero-socials { justify-content: center; }
   .hero-bio     { max-width: 100%; }
   .hero-right   { order: -1; }
-  .profile-frame { width: 200px; height: 240px; }
-  .profile-line { display: none; }
+  .profile-frame { width: 240px; height: 290px; }
+  .profile-line  { display: none; }
 }
 
 @media (max-width: 480px) {
-  .hero-actions { flex-direction: column; }
-  .hero-actions .btn { width: 100%; justify-content: center; }
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hero-actions .btn,
+  .btn-cv {
+    width: 100%;
+    justify-content: center;
+  }
 }
